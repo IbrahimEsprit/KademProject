@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity public class Universite {
     @Id
-    int idUniv;
-    String nomUniv;
+    private int idUniv;
+    private String nomUniv;
 
 }

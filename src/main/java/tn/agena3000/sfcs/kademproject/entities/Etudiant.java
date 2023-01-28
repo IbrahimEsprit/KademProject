@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Entity
 public class Etudiant {
     @Id
-    int IdEtudiant;
-    String prenomE;
-    String nomE;
-    Option option;
+    private int IdEtudiant;
+    private String prenomE;
+    private String nomE;
+    private Option option;
 }

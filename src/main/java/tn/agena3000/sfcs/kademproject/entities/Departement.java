@@ -5,6 +5,6 @@ import javax.persistence.Id;
 
 @Entity public class Departement {
     @Id
-    int idDepart;
-    String nomDepart;
+    private int idDepart;
+    private String nomDepart;
 }

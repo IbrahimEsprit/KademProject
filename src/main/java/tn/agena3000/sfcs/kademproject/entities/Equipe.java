@@ -6,7 +6,7 @@ import javax.persistence.ManyToOne;
 
 @Entity public class Equipe {
     @Id
-    int idEquipe;
-    String nomEquipe;
-    Niveau niveau;
+    private int idEquipe;
+    private String nomEquipe;
+    private Niveau niveau;
 }

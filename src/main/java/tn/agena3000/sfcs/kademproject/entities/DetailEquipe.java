@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity public class DetailEquipe {
     @Id
-    int idDetailEquipe;
-    int salle;
-    String thematique;
+    private int idDetailEquipe;
+    private int salle;
+    private String thematique;
 }
