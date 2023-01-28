@@ -9,6 +9,5 @@ public class Etudiant {
     int IdEtudiant;
     String prenomE;
     String nomE;
-    @ManyToOne
     Option option;
 }

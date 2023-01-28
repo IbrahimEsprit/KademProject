@@ -8,6 +8,7 @@ import javax.persistence.IdClass;
 import javax.persistence.ManyToOne;
 import javax.xml.crypto.Data;
 import java.awt.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -16,9 +17,8 @@ public class Contrat {
     @Id
     int idContrat;
     int montantContrat;
-    Date dateDebutContrat;
-    Date dateFinContrat;
+    LocalDate dateDebutContrat;
+    LocalDate dateFinContrat;
     boolean archive;
-    @ManyToOne
-    Specialite specialite;
+    private Specialite specialite;
 }

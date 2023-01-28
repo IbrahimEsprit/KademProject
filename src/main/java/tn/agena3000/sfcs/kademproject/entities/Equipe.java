@@ -8,7 +8,5 @@ import javax.persistence.ManyToOne;
     @Id
     int idEquipe;
     String nomEquipe;
-
-    @ManyToOne
     Niveau niveau;
 }
