@@ -1,11 +1,22 @@
 package tn.agena3000.sfcs.kademproject.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.*;
 
-@Entity public class Universite {
+import javax.persistence.*;
+import java.util.List;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Entity
+public class Universite {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     @Id
     private int idUniv;
     private String nomUniv;
-
+    @OneToMany
+    List<Departement> departement;
 }

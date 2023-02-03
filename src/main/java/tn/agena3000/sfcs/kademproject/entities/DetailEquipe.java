@@ -1,11 +1,22 @@
 package tn.agena3000.sfcs.kademproject.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.*;
 
-@Entity public class DetailEquipe {
+import javax.persistence.*;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class DetailEquipe {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private int idDetailEquipe;
     private int salle;
     private String thematique;
+    @OneToOne
+    Equipe equipe;
 }

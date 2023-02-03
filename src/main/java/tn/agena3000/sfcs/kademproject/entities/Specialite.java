@@ -8,6 +8,6 @@ import javax.persistence.Id;
 public enum Specialite {
     IA,
     RESEAUX,
-            CLOUD,
+    CLOUD,
     SECURITE
 }
