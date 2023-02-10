@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 
 public enum Niveau {
- JUNIOR,
+    JUNIOR,
     Senior,
     EXPERT
 }
