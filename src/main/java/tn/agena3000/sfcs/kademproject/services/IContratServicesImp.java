@@ -1,6 +1,7 @@
 package tn.agena3000.sfcs.kademproject.services;
 
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.agena3000.sfcs.kademproject.entities.Contrat;
@@ -9,10 +10,9 @@ import tn.agena3000.sfcs.kademproject.repositories.ContratRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IContratServicesImp implements IContratServices{
-
-        @Autowired
-    private ContratRepository contratRepository;
+        private final ContratRepository contratRepository;
 
         @Override
         public void ajouterContrat(Contrat c){

@@ -1,6 +1,8 @@
 package tn.agena3000.sfcs.kademproject.controllers;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.bind.annotation.*;
 import tn.agena3000.sfcs.kademproject.entities.Universite;
 import tn.agena3000.sfcs.kademproject.services.IUniversiteServices;
@@ -8,9 +10,10 @@ import tn.agena3000.sfcs.kademproject.services.IUniversiteServices;
 import java.util.List;
 
 @RestController
+@RequestMapping("universite")
+@RequiredArgsConstructor
 public class UniversiteController {
-    @Autowired
-    private IUniversiteServices iUniversiteServices;
+    private final IUniversiteServices iUniversiteServices;
 
     @GetMapping("/getAllUniversite")
     public List<Universite> getAllUniversite(){

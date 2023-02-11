@@ -1,5 +1,6 @@
 package tn.agena3000.sfcs.kademproject.services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,9 +9,10 @@ import tn.agena3000.sfcs.kademproject.entities.Equipe;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IEquipeServicesImp implements IEquipeServices{
-    @Autowired
-    private EquipeRepository equipeRepository;
+
+    private final EquipeRepository equipeRepository;
     @Override
     public void ajouterEquipe(Equipe e) {
         equipeRepository.save(e);

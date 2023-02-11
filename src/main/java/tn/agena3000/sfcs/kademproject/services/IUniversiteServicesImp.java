@@ -1,5 +1,6 @@
 package tn.agena3000.sfcs.kademproject.services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.agena3000.sfcs.kademproject.entities.Universite;
@@ -8,9 +9,9 @@ import tn.agena3000.sfcs.kademproject.repositories.UniversiteRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IUniversiteServicesImp implements IUniversiteServices {
-    @Autowired
-    private UniversiteRepository universiteRepository;
+    private final UniversiteRepository universiteRepository;
 
     @Override
     public void ajoutUniversite(Universite u) {

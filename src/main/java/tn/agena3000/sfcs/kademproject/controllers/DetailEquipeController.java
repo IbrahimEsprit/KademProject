@@ -1,5 +1,6 @@
 package tn.agena3000.sfcs.kademproject.controllers;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.agena3000.sfcs.kademproject.entities.DetailEquipe;
@@ -8,27 +9,29 @@ import tn.agena3000.sfcs.kademproject.services.IDetailEquipeServices;
 import java.util.List;
 
 @RestController
+@RequestMapping("detailequipe")
+@RequiredArgsConstructor
 public class DetailEquipeController {
-    @Autowired
-    private IDetailEquipeServices iDetailEquipeServices;
 
-    @GetMapping("/getAllDetailEquipe")
+    private final IDetailEquipeServices iDetailEquipeServices;
+
+    @GetMapping()
     public List<DetailEquipe> getAllDetailEquipe(){
         return iDetailEquipeServices.getAllDetailEquipe();
     }
-    @GetMapping("/getByIdDetailEquipe/{id}")
+    @GetMapping("{id}")
     public DetailEquipe getByIdDetailEquipe(@PathVariable int id){
         return iDetailEquipeServices.getByIdDetailEquipe(id);
     }
-    @DeleteMapping("/deleteDetailEquipe/{id}")
+    @DeleteMapping("{id}")
     private void deleteDetailEquipe(@PathVariable int id){
         iDetailEquipeServices.deleteDetailEquipe(id);
     }
-    @PostMapping("/ajouterDetailEquipe")
+    @PostMapping()
     public void ajouterDetailEquipe(@RequestBody DetailEquipe detailEquipe){
         iDetailEquipeServices.ajouterDetailEquipe(detailEquipe);
     }
-    @PutMapping("/updateDetailEquipe")
+    @PutMapping()
     private DetailEquipe updateDetailEquipe(@RequestBody DetailEquipe detailEquipe){
         iDetailEquipeServices.updateDetailEquipe(detailEquipe);
         return detailEquipe;

@@ -1,5 +1,6 @@
 package tn.agena3000.sfcs.kademproject.services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.agena3000.sfcs.kademproject.entities.DetailEquipe;
@@ -8,9 +9,9 @@ import tn.agena3000.sfcs.kademproject.repositories.DetailEquipeRepository;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IDetailEquipeImp implements IDetailEquipeServices {
-    @Autowired
-    private DetailEquipeRepository detailEquipeRepository;
+    private final DetailEquipeRepository detailEquipeRepository;
     @Override
     public void ajouterDetailEquipe(DetailEquipe de) {
         detailEquipeRepository.save(de);
