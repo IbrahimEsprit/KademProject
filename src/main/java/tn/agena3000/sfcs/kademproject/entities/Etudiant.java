@@ -25,6 +25,6 @@ public class Etudiant {
     Departement departement;
     @OneToMany(mappedBy = "etudiant")
     List<Contrat> contrats;
-    @ManyToMany(mappedBy = "etudiant")
+    @ManyToMany(mappedBy = "attribut_etudiant_classeequipe")
     List<Equipe> equipes;
 }

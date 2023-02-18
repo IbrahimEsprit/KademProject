@@ -22,6 +22,5 @@ public class Equipe {
     @OneToOne(mappedBy = "equipe")
     DetailEquipe detailEquipe;
     @ManyToMany
-    List<Etudiant> etudiant;
-
+    List<Etudiant> attribut_etudiant_classeequipe;
 }

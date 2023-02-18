@@ -10,4 +10,5 @@ public interface IEtudiantServices {
     List<Etudiant> getAll();
     Etudiant getById(int id);
     void deleteEtudiant(int id);
+    void assignEtudiantToDepartement (Integer etudiantId, Integer departementId);
 }

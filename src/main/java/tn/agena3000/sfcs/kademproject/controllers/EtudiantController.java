@@ -14,11 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EtudiantController {
 
-    IEtudiantServices iEtudiantServices;
-    @GetMapping()
-    public String sayHello(){
-        return "hello";
-    }
+    private final IEtudiantServices iEtudiantServices;
     @GetMapping()
     public List<Etudiant> getAll(){
         return iEtudiantServices.getAll();
@@ -31,5 +27,8 @@ public class EtudiantController {
     public void ajouterEtudiant(@RequestBody Etudiant e){
              iEtudiantServices.ajouterEtudiant(e);
     }
-
+    @PutMapping("{etudiantId}/{departementId}")
+    public void assignEtudiantToDepartement(@PathVariable Integer etudiantId,@PathVariable Integer departementId){
+        iEtudiantServices.assignEtudiantToDepartement(etudiantId,departementId);
+    }
 }
