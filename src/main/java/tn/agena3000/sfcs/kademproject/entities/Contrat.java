@@ -1,5 +1,6 @@
 package tn.agena3000.sfcs.kademproject.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.boot.jaxb.hbm.spi.JaxbHbmCompositeKeyBasicAttributeType;
 
@@ -28,5 +29,6 @@ public class Contrat {
     @Enumerated(EnumType.STRING)
     private Specialite specialite;
     @ManyToOne
+    @JsonIgnore
     Etudiant etudiant;
 }
