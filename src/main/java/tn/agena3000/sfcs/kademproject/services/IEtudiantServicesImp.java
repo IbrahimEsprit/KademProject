@@ -72,6 +72,7 @@ public class IEtudiantServicesImp implements IEtudiantServices {
 
     }
 
+    //we use transactional to make sure that we save the modifications done only if all transactions are well done
     @Override
     @Transactional
     public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Integer idContrat, Integer idEquipe) {
