@@ -78,8 +78,8 @@ public class IEtudiantServicesImp implements IEtudiantServices {
     public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Integer idContrat, Integer idEquipe) {
         Contrat contrat = contratRepository.findById(idContrat).orElse(null);
         Equipe equipe = equipeRepository.findById(idEquipe).orElse(null);
-        Assert.notNull(e,"contrat must no be null");
-        Assert.notNull(e,"equipe must no be null");
+        Assert.notNull(contrat,"contrat must no be null");
+        Assert.notNull(equipe,"equipe must no be null");
         //initialisation d'une liste 5ater un objet jdid ken je objet 9dim raw na3mlou getEquipes().add(equipe)
         List<Equipe> equipes = new ArrayList<>();
         equipes.add(equipe);
@@ -92,4 +92,19 @@ public class IEtudiantServicesImp implements IEtudiantServices {
         return e;
 
     }
+
+    @Override
+    @Transactional
+    public List<Etudiant> getEtudiantsByDepartement(Integer idDepartement) {
+       // Departement departement = departementRepository.findById(idDepartement).orElse(null);
+       // Assert.notNull(departement,"departement not found");
+       // return departement.getEtu();
+        //2eme méthode bel key word :
+        List<Etudiant> etudiants = etudiantRepository.findByDepartement(idDepartement);
+        return etudiants;
+    }
+
+
+
+
 }

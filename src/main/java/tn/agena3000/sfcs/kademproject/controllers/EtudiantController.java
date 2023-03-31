@@ -2,6 +2,7 @@ package tn.agena3000.sfcs.kademproject.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import tn.agena3000.sfcs.kademproject.entities.Etudiant;
 import tn.agena3000.sfcs.kademproject.services.IEtudiantServices;
@@ -34,5 +35,9 @@ public class EtudiantController {
     @PostMapping("{idContrat}/{idEquipe}")
     public Etudiant addAndAssignEtudiantToEquipeAndContract(@RequestBody Etudiant e,@PathVariable Integer idContrat,@PathVariable Integer idEquipe) {
         return iEtudiantServices.addAndAssignEtudiantToEquipeAndContract(e,idContrat,idEquipe);
+    }
+    @GetMapping("/departement/{idDepartement}")
+    public List<Etudiant> getEtudiantsByDepartement(@PathVariable Integer idDepartement){
+        return iEtudiantServices.getEtudiantsByDepartement(idDepartement);
     }
 }

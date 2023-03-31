@@ -1,4 +1,5 @@
 package tn.agena3000.sfcs.kademproject.controllers;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -7,6 +8,7 @@ import tn.agena3000.sfcs.kademproject.services.IContratServices;
 
 import java.util.List;
 
+@Tag(name= "Partie Contrat")
 @RestController
 @RequestMapping("contrat")
 @RequiredArgsConstructor

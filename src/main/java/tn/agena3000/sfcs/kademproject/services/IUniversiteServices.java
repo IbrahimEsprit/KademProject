@@ -1,5 +1,6 @@
 package tn.agena3000.sfcs.kademproject.services;
 
+import tn.agena3000.sfcs.kademproject.entities.Departement;
 import tn.agena3000.sfcs.kademproject.entities.Universite;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface IUniversiteServices {
     Universite getByIdUniversite(Integer id);
     void deleteUniversite(Integer id);
     void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement);
+    public List<Departement> retrieveDepartementsByUniversite(Integer idUniversite);
 }

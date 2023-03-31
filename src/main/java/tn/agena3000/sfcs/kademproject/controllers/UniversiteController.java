@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.bind.annotation.*;
+import tn.agena3000.sfcs.kademproject.entities.Departement;
 import tn.agena3000.sfcs.kademproject.entities.Universite;
 import tn.agena3000.sfcs.kademproject.services.IUniversiteServices;
 
@@ -39,5 +40,9 @@ public class UniversiteController {
     @PutMapping("/{idUniversite}/{idDepartement}")
     public void assignUniversiteToDepartement(@PathVariable Integer idUniversite,@PathVariable Integer idDepartement) {
         iUniversiteServices.assignUniversiteToDepartement(idUniversite,idDepartement);
+    }
+    @GetMapping("/getDepartement/{id}")
+    public List<Departement> retrieveDepartementsByUniversite(@PathVariable Integer idUniversite) {
+       return iUniversiteServices.retrieveDepartementsByUniversite(idUniversite);
     }
 }
